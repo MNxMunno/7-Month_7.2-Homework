@@ -9,16 +9,18 @@ import { CiSearch } from "react-icons/ci";
 import { toggleHeart } from "../../context/slice/wishlistSlice";
 import { useDeleteUsersMutation } from "../../context/api/userApi";
 import UpdateUser from "../../components/update/UpdateUser";
-// import { useDeleteProductsMutation } from "../../context/api/productApi";
+import { useDeleteProductsMutation } from "../../context/api/productApi";
 
 const Cart = ({ data, isAdmin, editUser }) => {
   let wishlist = useSelector((state) => state.wishlist.value);
   let dispatch = useDispatch();
   const [deleteUser, { isLoading }] = useDeleteUsersMutation();
-  // const [deleteProduct, { isSuccess }] = useDeleteProductsMutation();
+  const [deleteProduct, { isSuccess }] = useDeleteProductsMutation();
   const handleDeleteUser = (id) => {
     deleteUser(id);
-    // deleteProduct(id);
+  };
+  const handleDeleteProduct = (id) => {
+    deleteProduct(id);
   };
   let card = data?.map((el) => (
     <div className="card" key={el.id}>
@@ -46,10 +48,23 @@ const Cart = ({ data, isAdmin, editUser }) => {
       <h1>{el.title}</h1>
       <h3>{el.firsname}</h3>
       <h3>{el.lastname}</h3>
-      <p>{el.description}</p>
-      <b>{el.age}</b>
+      <p>{el.price}</p>
+      <p>
+        <b>{el.age}</b>
+      </p>
       {isAdmin ? (
         <button className="delete" onClick={() => handleDeleteUser(el.id)}>
+          delete
+        </button>
+      ) : (
+        <></>
+      )}
+      {isAdmin ? (
+        <button
+          className="delete"
+          style={{ background: "blue" }}
+          onClick={() => handleDeleteProduct(el.id)}
+        >
           delete
         </button>
       ) : (

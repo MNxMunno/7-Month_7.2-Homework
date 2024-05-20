@@ -3,7 +3,6 @@ import { usePutUsersMutation } from "../../context/api/userApi";
 
 const UpdateUser = ({ data, editUser }) => {
   const [updateUser, { isLoading, isSuccess }] = usePutUsersMutation();
-
   useEffect(() => {
     if (isSuccess) {
       editUser(null);
