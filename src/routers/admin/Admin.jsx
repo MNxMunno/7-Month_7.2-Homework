@@ -21,12 +21,6 @@ const Admin = () => {
         <NavLink className="link" to={"manageProduct"}>
           Manage Product
         </NavLink>
-        <NavLink className="link" to={"updateUser"}>
-          Update User
-        </NavLink>
-        <NavLink className="link" to={"updateProduct"}>
-          Update Product
-        </NavLink>
       </div>
       <div className="cards">
         <Outlet />

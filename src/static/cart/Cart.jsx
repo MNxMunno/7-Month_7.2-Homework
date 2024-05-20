@@ -8,9 +8,10 @@ import { MdAddShoppingCart } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
 import { toggleHeart } from "../../context/slice/wishlistSlice";
 import { useDeleteUsersMutation } from "../../context/api/userApi";
+import UpdateUser from "../../components/update/UpdateUser";
 // import { useDeleteProductsMutation } from "../../context/api/productApi";
 
-const Cart = ({ data, isAdmin }) => {
+const Cart = ({ data, isAdmin, editUser }) => {
   let wishlist = useSelector((state) => state.wishlist.value);
   let dispatch = useDispatch();
   const [deleteUser, { isLoading }] = useDeleteUsersMutation();
@@ -54,8 +55,25 @@ const Cart = ({ data, isAdmin }) => {
       ) : (
         <></>
       )}
+      {isAdmin ? (
+        <button
+          style={{
+            padding: "5px 10px",
+            background: "grey",
+            color: "#fff",
+            borderRadius: "8px",
+            marginLeft: "10px",
+          }}
+          onClick={() => editUser(el)}
+        >
+          Edit
+        </button>
+      ) : (
+        <></>
+      )}
     </div>
   ));
+
   return (
     <>
       <section className="products">

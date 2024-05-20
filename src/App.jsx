@@ -11,8 +11,6 @@ import CreateUser from "./routers/admin/createUser/CreateUSer";
 import ManageUser from "./routers/admin/manageUser/ManageUser";
 import CreateProduct from "./routers/admin/createProduct/CreateProduct";
 import ManageProduct from "./routers/admin/manageProduct/ManageProduct";
-import UpdateUser from "./routers/admin/update/UpdateUser";
-import UpdateProduct from "./routers/admin/update/UpdateProduct";
 
 const App = () => {
   return (
@@ -27,8 +25,6 @@ const App = () => {
           <Route path="manageUser" element={<ManageUser />} />
           <Route path="createProduct" element={<CreateProduct />} />
           <Route path="manageProduct" element={<ManageProduct />} />
-          <Route path="updateUser" element={<UpdateUser />} />
-          <Route path="updateProduct" element={<UpdateProduct />} />
         </Route>
         <Route path="*" element={<PageNotFound />} />
       </Routes>

@@ -10,6 +10,13 @@ export const usersApi = api.injectEndpoints({
       }),
       providesTags: ["Users"],
     }),
+    getUsersDetail: build.query({
+      query: (id) => ({
+        url: `/users/${id}`,
+        method: "GET",
+      }),
+      providesTags: ["Users"],
+    }),
     deleteUsers: build.mutation({
       query: (id) => ({
         url: `/users/${id}`,
@@ -25,11 +32,21 @@ export const usersApi = api.injectEndpoints({
       }),
       invalidatesTags: ["Users"],
     }),
+    putUsers: build.mutation({
+      query: ({ id, body }) => ({
+        url: `/users/${id}`,
+        body,
+        method: "PUT",
+      }),
+      invalidatesTags: ["Users"],
+    }),
   }),
 });
 
 export const {
   useGetUsersQuery,
+  useGetUsersDetailQuery,
   useDeleteUsersMutation,
   usePostUsersMutation,
+  usePutUsersMutation,
 } = usersApi;
