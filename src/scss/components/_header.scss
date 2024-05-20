@@ -1,0 +1,115 @@
+header {
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  z-index: 100;
+  box-shadow: 3px 3px 5px rgba(146, 146, 146, 0.2);
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+
+    .nav__items {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 70%;
+      gap: 24px;
+      .link_par {
+        font-family: Inter;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19.36px;
+        text-align: center;
+        color: #000;
+        &.active {
+          color: red;
+        }
+      }
+      .icon {
+        display: none;
+      }
+    }
+    .logo_2 {
+      display: none;
+    }
+    .nav__btns {
+      form {
+        position: relative;
+        input {
+          padding: 10px;
+          outline: none;
+          font-family: Inter;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 16.94px;
+          text-align: start;
+          background: #edf2f4;
+          border: 0;
+          border-radius: 8px;
+        }
+        .search_icon {
+          position: absolute;
+          top: 6px;
+          right: 15px;
+          color: #000;
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 777px) {
+    nav {
+      .nav__items {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: #fff;
+        border-top: 2px solid #eee;
+        border-radius: 16px 16px 0 0;
+        padding: 20px;
+        .logo {
+          display: none;
+        }
+      }
+      .logo_2 {
+        display: block;
+        width: 66px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 555px) {
+    nav {
+      .nav__items {
+        .link {
+          display: none;
+        }
+        .icon {
+          display: block;
+          color: black;
+          transition: 0.2s;
+          font-size: 24px;
+          &:hover {
+            color: #f9f;
+          }
+        }
+      }
+      .logo_2 {
+        display: block;
+        width: 66px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

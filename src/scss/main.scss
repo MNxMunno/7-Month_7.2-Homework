@@ -1,0 +1,80 @@
+@font-face {
+  font-family: Inter;
+  src: url(../assets/fonts/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: Lalezar;
+  src: url(../assets/fonts/Lalezar-Regular.ttf);
+}
+@font-face {
+  font-family: Lilita One;
+  src: url(../assets/fonts/LilitaOne-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1300px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+main {
+  padding-top: 80px;
+}
+
+.admin {
+  padding-top: 120px;
+}
+
+form {
+  padding: 30px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 32px;
+  input {
+    outline: none;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    width: 50%;
+  }
+  button {
+    background: #53ea3c;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.2s;
+    &:hover {
+      background: #2b841d;
+    }
+  }
+}
+
+@import "./components/header";
+@import "./components/notFound";
+@import "./components/products";
+@import "./routers/home";
+@import "./routers/singleRoute";
+@import "./routers/wishlist";
+@import "./routers/admin";
+@import "./static/btn";
+@import "./static/cart";
